@@ -11,8 +11,8 @@ export default function LoginScreen() {
   const [text, setText] = React.useState("");
   return (
 
-    <ScrollView>
     <View style={styles.container}>
+    <View>
        <Headline style={styles.paragraph}> Welcome to STARPORT </Headline>  
     </View>
 
@@ -44,7 +44,7 @@ export default function LoginScreen() {
       </Text>
     </View>
 
-    </ScrollView>
+    </View>
   );
 }
 
@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: 'pink',
     padding: 50,
   },
