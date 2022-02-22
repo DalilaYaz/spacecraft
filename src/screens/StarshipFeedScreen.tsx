@@ -1,13 +1,27 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, StatusBar, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, StatusBar, View, FlatList } from "react-native";
 
 import { default as data } from "../../api/data.json";
 
+const renderItem = ({ item }) => {
+  console.log(item);
+  return (
+    <Text> {item.name} </Text>
+  )
+
+  };
+
 export const StarshipFeedScreen = () => {
+  console.log(data);  
+  
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
-        <Text>{JSON.stringify(data.results)}</Text>
+        <FlatList
+          data={data.results}
+          renderItem={renderItem}
+          keyExtractor={item => item.name}
+        />
       </View>
     </SafeAreaView>
   );
