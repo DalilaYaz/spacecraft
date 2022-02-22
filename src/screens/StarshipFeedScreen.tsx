@@ -6,9 +6,15 @@ import { default as data } from "../../api/data.json";
 const renderItem = ({ item }) => {
   console.log(item);
   return (
+    <View>
     <Text> {item.name} </Text>
-  )
+    <Text> {item.model} </Text>
+    <Text> {item.crew} </Text>
+    <Text> {item.hyperdrive_rating} </Text>
+    <Text> {item.cost_in_credits} </Text>
 
+  </View>
+  )
   };
 
 export const StarshipFeedScreen = () => {
