@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 // You can import from local files
 import { Headline } from 'react-native-paper';
 import { TextInput } from 'react-native-paper';
@@ -11,6 +11,10 @@ import { Routes } from '../navigation/Routes';
 export default function LoginScreen(props) {
   console.log(props);
   const [text, setText] = React.useState("");
+
+  function navigateToFeed() {
+    props.navigation.navigate(Routes.STARSHIP_FEED_SCREEN);
+  }
   
   function navigateToTerms() {
     props.navigation.navigate(Routes.TERMS_SCREEN);
@@ -22,6 +26,13 @@ export default function LoginScreen(props) {
     <View>
        <Headline style={styles.paragraph}> Welcome to STARPORT </Headline>  
     </View>
+
+    <Image 
+    style={styles.image}
+    source={{
+      uri: "https://www.9lives-magazine.com/wp-content/uploads/2017/05/giphy-7.gif",
+      }}
+    />
 
     <View style={styles.body}>
       <TextInput autoComplete={true}
@@ -40,8 +51,20 @@ export default function LoginScreen(props) {
     </View>
 
     <View style={styles.body}>
-      <Button mode="contained" onPress={() => console.log('Pressed')}>
-        Login
+      <Button style={styles.bouton} mode="contained"  onPress={navigateToFeed}>
+      <Image 
+          style={styles.image2}
+          source={{
+          uri: "https://assets.stickpng.com/images/580b585b2edbce24c47b2d2d.png",
+      }}
+    />
+        <Text style={styles.log}>Login</Text>
+        <Image 
+          style={styles.image1}
+          source={{
+          uri: "https://assets.stickpng.com/images/580b585b2edbce24c47b2d2d.png",
+      }}
+    />
       </Button>
     </View>
 
@@ -63,20 +86,52 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'pink',
+    backgroundColor: "#7C9CB4",
     padding: 50,
   },
 
+  log: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+
+  bouton:{
+    backgroundColor: "#ACD8F6",
+  },
+
+  image: {
+    width: 368,
+    height: 278,
+    marginBottom: 20,
+    alignSelf: "center",
+    resizeMode: 'contain', 
+    borderRadius:15,
+},
+
+image1:{
+  width: 28,
+  height: 28,
+  marginLeft: 16,
+},
+
+image2:{
+  width: 28,
+  height: 28,
+  marginRight: 16,
+  borderRadius: 30,
+},
+
+
   paragraph: {
     margin: 24,
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
     color: 'white',
   },
 
   body: {
-    margin: 24,
+    margin: 14,
   },
 
   end: {
@@ -84,5 +139,6 @@ const styles = StyleSheet.create({
     color: 'grey',
     fontStyle: "italic",
   }
+
 
 });

@@ -13,10 +13,6 @@ export const TermsScreen = () => {
     <SafeAreaView>
         <ScrollView> 
     <View>
-      <Appbar.Header>
-        <Appbar.BackAction onPress={goBack} />
-        <Appbar.Content title="Terms and Conditions" />
-      </Appbar.Header>
       <View style={{ padding: 32 }}>
         <Text>
           This Terms of Service, including all supplemental terms as amended
