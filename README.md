@@ -1,6 +1,7 @@
 # spacecraft
 my first react native app with star wars api 
 
+![alt text](https://github.com/DalilaYaz/spacecraft/blob/main/Capture.png?raw=true)
 
 
 nmp start pour lancer l'application
