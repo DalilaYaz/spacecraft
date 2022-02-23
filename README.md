@@ -1,12 +1,12 @@
-#Spacecraft
+# Spacecraft
 
 My first react native app with star wars api 
 
 ![alt text](https://github.com/DalilaYaz/spacecraft/blob/main/Capture.png?raw=true)
 
-#Start application
+# Start application
 
 Pour lancer l'application: npm start
 
-#Lien expo.dev
+# Lien expo.dev
 ⚙️   Project page: https://expo.dev/@dalilayaz/spacecraft?serviceType=classic&distribution=expo-go
