@@ -1,14 +1,21 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 // You can import from local files
 import { Headline } from 'react-native-paper';
 import { TextInput } from 'react-native-paper';
 import { Button } from 'react-native-paper';
+import { Routes } from '../navigation/Routes';
 // or any pure javascript modules available in npm
 
 
-export default function LoginScreen() {
+export default function LoginScreen(props) {
+  console.log(props);
   const [text, setText] = React.useState("");
+  
+  function navigateToTerms() {
+    props.navigation.navigate(Routes.TERMS_SCREEN);
+  }
+
   return (
 
     <View style={styles.container}>
@@ -39,9 +46,11 @@ export default function LoginScreen() {
     </View>
 
     <View>
+    <TouchableOpacity onPress={navigateToTerms}>
       <Text style={styles.end}>
         Read conditions and Tearms
       </Text>
+      </TouchableOpacity>
     </View>
 
     </View>
